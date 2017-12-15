@@ -1,0 +1,64 @@
+header {
+  padding: 58px 0 100px;
+}
+
+@media (min-width: 992px) {
+  header {
+    padding: 60px 0 100px;
+  }
+}
+
+body,
+p,
+li {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+nav ul {
+  justify-content: space-around;
+}
+nav li {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+section {
+  padding: 100px 0;
+}
+#profile {
+  padding: 80px ;
+}
+
+.tab-content {
+  border-left: #ddd 1px solid;
+  border-right: #ddd 1px solid;
+  border-bottom: #ddd 1px solid;
+}
+
+.tab-pane {
+  padding: 1rem;
+}
+
+.jumbotron {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  padding-bottom: 2rem;
+}
+.profile-margins {
+  margin: 20px 30px 20px 0;
+}
+h1.profile-name {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 3.5em;
+  margin-top: 20px;
+}
+h3.profile-name {
+  font-family: "Fjalla One", sans-serif;
+}
