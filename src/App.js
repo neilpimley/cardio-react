@@ -8,6 +8,8 @@ import PatientInformation from './components/PatientInformation';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
+import Example from './components/Example';
+
 class App extends Component {
   render() {
     return (
@@ -26,6 +28,7 @@ class App extends Component {
           <Contact />
         </ScrollableAnchor>
         <Footer />
+        <Example />
     </div>
     );
   }

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 
-export default class Example extends React.Component {
+export default class Example extends Component {
   constructor(props) {
     super(props);
 

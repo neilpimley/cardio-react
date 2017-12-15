@@ -63,7 +63,7 @@ export default class Contact extends Component {
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-12">
-                                <button class="btn btn-lg float-right">Send</button>
+                                <button type="submit" class="btn btn-lg float-right">Send</button>
                             </div>
                         </div>
                     </form>
