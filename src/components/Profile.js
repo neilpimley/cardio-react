@@ -16,7 +16,7 @@ export default class Profile extends Component {
                 </div>
 
                 <div class="col-xs-12 col-md-3">
-                    <img src={profile} class="img-fluid img-thumbnail float-left" />
+                    <img src={profile} class="img-fluid img-thumbnail float-left" alt="Dr. Peter McKavanagh" />
                 </div>
                 <div class="col-xs-12 col-md-9 d-xs-none">
                     <h1 class="profile-name">Dr Peter McKavanagh</h1>
@@ -31,7 +31,7 @@ export default class Profile extends Component {
                     </ul>
                     <p class="ml-2">
                         <a href="https://www.linkedin.com/in/peter-mckavanagh-25a853ab/" title="Click to view my LinkedIn profile">
-                            <img src={linkedin} />
+                            <img src={linkedin} alt="Click to view my LinkedIn profile" />
                         </a>
                     </p>
                 </div>

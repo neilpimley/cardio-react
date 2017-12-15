@@ -1,6 +1,30 @@
 import React, { Component } from 'react';
 
 export default class Contact extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {value: ''};
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+    
+        this.setState({
+          [name]: value
+        });
+      }
+
+    handleSubmit(event) {
+        alert('A name was submitted: ' + this.state.value);
+        event.preventDefault();
+    }
+
+
     render() {
       return (
     <section id="contact">
@@ -12,29 +36,29 @@ export default class Contact extends Component {
                         are happy to see self-referrals but recommend having a GP referral before booking directly/self-referring
                         to ensure you see appropriate medical personal.</p>
 
-                    <form>
+                    <form onSubmit={this.handleSubmit}>
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-3 col-form-label">Full Name</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="name" placeholder="Enter your name" />
+                                <input type="text" class="form-control" name="patientName" placeholder="Enter your name" />
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-3 col-form-label">Phone numer</label>
                             <div class="col-sm-9">
-                                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" />
+                                <input type="tel" class="form-control" name="patientPhone" placeholder="Enter your phone number" />
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-3 col-form-label">Email address</label>
                             <div class="col-sm-9">
-                                <input type="email" class="form-control" id="email" placeholder="Enter your email address" />
+                                <input type="email" class="form-control" name="patientEmail" placeholder="Enter your email address" />
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-12">
                                 <label for="exampleFormControlTextarea1">Message</label>
-                                <textarea class="form-control" id="message" rows="3"></textarea>
+                                <textarea class="form-control" name="patientMessage" rows="3" value={this.state.value} onChange={this.handleChange}></textarea>
                             </div>
                         </div>
                         <div class="form-group row">
