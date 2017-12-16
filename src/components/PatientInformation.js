@@ -22,11 +22,10 @@ export default class PatientInformation extends Component {
     render() {
       return (
         <section>
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-10 mx-auto">
+          <div className="container">
+              <div className="row">
+                  <div className="col-lg-10 mx-auto">
                       <h2>Patient information </h2>
-
 
                       <Nav tabs className="nav-fill">
                         <NavItem>
@@ -117,7 +116,8 @@ export default class PatientInformation extends Component {
                             on the day of consultation.</p>
 
                         <h5>Consultation fees</h5>
-                        <table class="table table-striped table-bordered">
+                        <table className="table table-striped table-bordered">
+                        <tbody>
                             <tr>
                                 <td>Initial consultation self pay</td>
                                 <td> £175</td>
@@ -134,6 +134,7 @@ export default class PatientInformation extends Component {
                                 <td>Follow up consultation insured</td>
                                 <td>£100-£150 (depending on the insurance company)</td>
                             </tr>
+                            </tbody>
                         </table>
                     </TabPane>
                     </TabContent>
