@@ -3,7 +3,12 @@ import React, { Component } from 'react';
 export default class Contact extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = {
+            patientName: '',
+            patientPhone: '',
+            patientEmail: '',
+            patientMessage: ''
+        };
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,7 +25,7 @@ export default class Contact extends Component {
       }
 
     handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
+        alert('A name was submitted: ' + JSON.stringify(this.state));
         event.preventDefault();
     }
 
@@ -28,42 +33,42 @@ export default class Contact extends Component {
     render() {
       return (
     <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-10 mx-auto">
                     <h2>Contact Information</h2>
                     <p>To make an appointment with Dr McKavanagh please get in touch via the contact details below based. We
                         are happy to see self-referrals but recommend having a GP referral before booking directly/self-referring
                         to ensure you see appropriate medical personal.</p>
 
                     <form onSubmit={this.handleSubmit}>
-                        <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-3 col-form-label">Full Name</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="patientName" placeholder="Enter your name" />
+                        <div className="form-group row">
+                            <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Full Name</label>
+                            <div className="col-sm-9">
+                                <input type="text" className="form-control" name="patientName" placeholder="Enter your name" />
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-3 col-form-label">Phone numer</label>
-                            <div class="col-sm-9">
-                                <input type="tel" class="form-control" name="patientPhone" placeholder="Enter your phone number" />
+                        <div className="form-group row">
+                            <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Phone numer</label>
+                            <div className="col-sm-9">
+                                <input type="tel" className="form-control" name="patientPhone" placeholder="Enter your phone number" />
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-3 col-form-label">Email address</label>
-                            <div class="col-sm-9">
-                                <input type="email" class="form-control" name="patientEmail" placeholder="Enter your email address" />
+                        <div className="form-group row">
+                            <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Email address</label>
+                            <div className="col-sm-9">
+                                <input type="email" className="form-control" name="patientEmail" placeholder="Enter your email address" />
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <div class="col-sm-12">
-                                <label for="exampleFormControlTextarea1">Message</label>
-                                <textarea class="form-control" name="patientMessage" rows="3" value={this.state.value} onChange={this.handleChange}></textarea>
+                        <div className="form-group row">
+                            <div className="col-sm-12">
+                                <label htmlFor="exampleFormControlTextarea1">Message</label>
+                                <textarea className="form-control" name="patientMessage" rows="3" value={this.state.message} onChange={this.handleChange}></textarea>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <div class="col-sm-12">
-                                <button type="submit" class="btn btn-lg float-right">Send</button>
+                        <div className="form-group row">
+                            <div className="col-sm-12">
+                                <button type="submit" className="btn btn-lg float-right">Send</button>
                             </div>
                         </div>
                     </form>

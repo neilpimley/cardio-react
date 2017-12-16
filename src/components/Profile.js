@@ -6,30 +6,30 @@ export default class Profile extends Component {
     render() {
       return (
         <div>
-        <section class="bg-light">
-        <div class="container">
-            <div class="row">
+        <section className="bg-light">
+        <div className="container">
+            <div className="row">
 
-                <div class="col-xs-12 d-none d-xs-block">
-                    <h3 class="profile-name">Dr Peter McKavanagh</h3>
+                <div className="col-xs-12 d-none d-xs-block">
+                    <h3 className="profile-name">Dr Peter McKavanagh</h3>
                     <p>MB BCh BAO, MRCP(UK), MRCP(Ire), MMedSc, PhD</p>
                 </div>
 
-                <div class="col-xs-12 col-md-3">
-                    <img src={profile} class="img-fluid img-thumbnail float-left" alt="Dr. Peter McKavanagh" />
+                <div className="col-xs-12 col-md-3">
+                    <img src={profile} className="img-fluid img-thumbnail float-left" alt="Dr. Peter McKavanagh" />
                 </div>
-                <div class="col-xs-12 col-md-9 d-xs-none">
-                    <h1 class="profile-name">Dr Peter McKavanagh</h1>
+                <div className="col-xs-12 col-md-9 d-xs-none">
+                    <h1 className="profile-name">Dr Peter McKavanagh</h1>
                     <h5>MB BCh BAO, MRCP(UK), MRCP(Ire), MMedSc, PhD</h5>
                     <p>A dedicated consultant Cardiologist working at the Ulster and Royal Victoria Hospitals in Belfast. Areas
                         of expertise include:</p>
-                    <ul class="expert-list">
+                    <ul className="expert-list">
                         <li>General and acute cardiology</li>
                         <li>Coronary artery disease</li>
                         <li>Interventional cardiology (angioplasty/stenting)</li>
                         <li>Cardiac CT, heart failure, cholesterol management</li>
                     </ul>
-                    <p class="ml-2">
+                    <p className="ml-2">
                         <a href="https://www.linkedin.com/in/peter-mckavanagh-25a853ab/" title="Click to view my LinkedIn profile">
                             <img src={linkedin} alt="Click to view my LinkedIn profile" />
                         </a>
@@ -38,10 +38,10 @@ export default class Profile extends Component {
             </div>
         </div>
         </section>
-        <section class="bg-secondary">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto text-white">
+        <section className="bg-secondary">
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-10 mx-auto text-white">
                     <h2>Professional Profile</h2>
                     <p>All three of his degrees were from Queen's University Belfast. His primary Medical Degree with distinction
                         was in 2003; his Master in Medical Education with distinction was in 2010; and his PhD in Cardiac
