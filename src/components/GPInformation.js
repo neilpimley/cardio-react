@@ -16,49 +16,49 @@ export default class GPInformation extends Component {
                           <div className="form-group row">
                               <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Full Name</label>
                               <div className="col-sm-9">
-                                  <input type="text" className="form-control" id="name" placeholder="Enter your name" />
+                                  <input type="text" className="form-control" name="gpNAme" placeholder="Enter your name" />
                               </div>
                           </div>
                           <div className="form-group row">
                               <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Phone numer</label>
                               <div className="col-sm-9">
-                                  <input type="tel" className="form-control" id="phone" placeholder="Enter your phone number" />
+                                  <input type="tel" className="form-control" name="gpPhone" placeholder="Enter your phone number" />
                               </div>
                           </div>
                           <div className="form-group row">
                               <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Email address</label>
                               <div className="col-sm-9">
-                                  <input type="email" className="form-control" id="name" placeholder="Enter your email address" />
+                                  <input type="email" className="form-control" name="gpEmail" placeholder="Enter your email address" />
                               </div>
                           </div>
                           <div className="form-group row">
                               <label htmlFor="inputPassword" className="col-sm-3 col-form-label">GP Practice</label>
                               <div className="col-sm-9">
-                                  <input type="email" className="form-control" id="practiceName" placeholder="Enter your GP Practice Name" />
+                                  <input type="email" className="form-control" name="practiceName" placeholder="Enter your GP Practice Name" />
                               </div>
                           </div>
                           <div className="form-group row">
                               <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Patient Name</label>
                               <div className="col-sm-9">
-                                  <input type="text" className="form-control" id="patientName" placeholder="Enter your patient's name" />
+                                  <input type="text" className="form-control" name="patientName" placeholder="Enter your patient's name" />
                               </div>
                           </div>
                           <div className="form-group row">
                               <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Patient phone numer</label>
                               <div className="col-sm-9">
-                                  <input type="tel" className="form-control" id="patientPhone" placeholder="Enter your patient's phone number" />
+                                  <input type="tel" className="form-control" name="patientPhone" placeholder="Enter your patient's phone number" />
                               </div>
                           </div>
                           <div className="form-group row">
                               <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Patient email address</label>
                               <div className="col-sm-9">
-                                  <input type="email" className="form-control" id="patientEmail" placeholder="Enter your patient's email address" />
+                                  <input type="email" className="form-control" name="patientEmail" placeholder="Enter your patient's email address" />
                               </div>
                           </div>
                           <div className="form-group row">
                               <div className="col-sm-12">
                                   <label htmlFor="comments">Comments</label>
-                                  <textarea className="form-control" id="comments" rows="3"></textarea>
+                                  <textarea className="form-control" name="gpMessage" rows="3"></textarea>
                               </div>
                           </div>
                           <div className="form-group row">

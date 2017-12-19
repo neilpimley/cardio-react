@@ -3,21 +3,45 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "bootstrap": "bootstrap@4.0.0-beta.2",
+    "classnames": "^2.2.3",
+    "express": "^4.15.4",
+    "fetch": "^1.1.0",
+    "font-awesome": "^4.7.0",
+    "nodemailer": "^4.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-fontawesome": "^1.6.1",
+    "react-google-maps": "^9.4.3",
     "react-scripts": "1.0.17",
-    "bootstrap": "bootstrap@4.0.0-beta.2",
-    "reactstrap": "^4.8.0",
     "react-scrollable-anchor": "^0.5.0",
     "react-transition-group": "^2.2.1",
-    "fontawesome": "^4.7.2",
-    "react-fontawesome": "^1.6.1",
-    "classnames": "^2.2.3"
+    "reactstrap": "^4.8.0",
+    "whatwg-fetch": "^2.0.3",
+    "dns" : "file:./src/dns",
+    "react-json-pretty": "^1.7.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "start npm run start:client && start npm run start:server",
+    "start:client": "react-scripts start",
+    "start:server": "babel-node src/server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "proxy": {
+    "/patientContact": {
+      "target": "http://localhost:4000"
+    },
+    "/gpContact": {
+      "target": "http://localhost:4000"
+    }
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1"
   }
 }
