@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { GoogleMap, Marker } from 'react-google-maps';
+import FontAwesome from 'react-fontawesome';
+import 'whatwg-fetch';
 
 export default class Contact extends Component {
     constructor(props) {
@@ -7,7 +10,10 @@ export default class Contact extends Component {
             patientName: '',
             patientPhone: '',
             patientEmail: '',
-            patientMessage: ''
+            patientMessage: '',
+            loading: false,
+            patientMessageSent: false,
+            errorMessage: ''
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -18,15 +24,33 @@ export default class Contact extends Component {
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
-    
+        
         this.setState({
           [name]: value
         });
       }
 
     handleSubmit(event) {
-        alert('A name was submitted: ' + JSON.stringify(this.state));
         event.preventDefault();
+        this.setState({ 
+            loading: true, 
+            patientMessageSent: false, 
+            errorMessage: '' 
+        });
+        fetch('/patientContact', {
+	        method: 'post',
+	        body: JSON.stringify(this.state)
+        }).then(function() { 
+            this.setState({
+                loading: false, 
+                patientMessageSent: true,
+            });
+         }).catch(function(error) {
+            this.setState({
+                loading: false, 
+                errorMessage: error 
+            });
+        });
     }
 
 
@@ -40,39 +64,53 @@ export default class Contact extends Component {
                     <p>To make an appointment with Dr McKavanagh please get in touch via the contact details below based. We
                         are happy to see self-referrals but recommend having a GP referral before booking directly/self-referring
                         to ensure you see appropriate medical personal.</p>
-
-                    <form onSubmit={this.handleSubmit}>
+                        <form onSubmit={this.handleSubmit}>
                         <div className="form-group row">
                             <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Full Name</label>
                             <div className="col-sm-9">
-                                <input type="text" className="form-control" name="patientName" placeholder="Enter your name" />
+                                <input type="text" className="form-control" name="patientName"
+                                    disabled={this.state.loading} required
+                                    placeholder="Enter your name" onChange={this.handleInputChange}/>
                             </div>
                         </div>
                         <div className="form-group row">
                             <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Phone numer</label>
                             <div className="col-sm-9">
-                                <input type="tel" className="form-control" name="patientPhone" placeholder="Enter your phone number" />
+                                <input type="tel" className="form-control" name="patientPhone" 
+                                    disabled={this.state.loading} required
+                                    placeholder="Enter your phone number" onChange={this.handleInputChange}/>
                             </div>
                         </div>
                         <div className="form-group row">
                             <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Email address</label>
                             <div className="col-sm-9">
-                                <input type="email" className="form-control" name="patientEmail" placeholder="Enter your email address" />
+                                <input type="email" className="form-control" name="patientEmail" 
+                                    disabled={this.state.loading} required
+                                    placeholder="Enter your email address" onChange={this.handleInputChange}/>
                             </div>
                         </div>
                         <div className="form-group row">
                             <div className="col-sm-12">
                                 <label htmlFor="exampleFormControlTextarea1">Message</label>
-                                <textarea className="form-control" name="patientMessage" rows="3" value={this.state.message} onChange={this.handleChange}></textarea>
+                                <textarea className="form-control" name="patientMessage" rows="3" 
+                                disabled={this.state.loading} required
+                                    onChange={this.handleInputChange}></textarea>
                             </div>
                         </div>
                         <div className="form-group row">
                             <div className="col-sm-12">
-                                <button type="submit" className="btn btn-lg float-right">Send</button>
+                                <button type="submit" className="btn btn-lg float-right" 
+                                disabled={this.state.loading}>
+                                {this.state.loading && 
+                                    <FontAwesome name='circle-o-notch' spin />
+                                }
+                                &nbsp; Send</button>
                             </div>
                         </div>
                     </form>
-
+                    {this.state.patientMessageSent && 
+                        <h3>Your message has been sent</h3>
+                    }
                     <h4>Request a call back</h4>
 
                     <address>
