@@ -1,12 +1,14 @@
 import nodemailer from 'nodemailer'
 
-import config from './config'
-
 const transporter = nodemailer.createTransport({
-  service: 'Gmail',
+  service: 'Godaddy',
+  host: "smtpout.europe.secureserver.net",  
+  secureConnection: true,
+  port: 465,
+  
   auth: {
-    type: 'OAuth2',
-    ...config
+      user: "website@drpetermckavanagh.com",
+      pass: "Card10Lurgan" 
   }
 });
 
@@ -15,7 +17,7 @@ const send = ({ email, name, text }) => {
   const message = {
     from,
     to: 'mckavanagh@doctors.org.uk',
-    subject: `New message from ${from} sent via your website`,
+    subject: `New message from ${name} sent via your website`,
     text,
     replyTo: from
   };

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { GoogleMap, Marker } from 'react-google-maps';
 import FontAwesome from 'react-fontawesome';
+import { LocationMap } from './LocationMap';
 import 'whatwg-fetch';
 
 export default class Contact extends Component {
@@ -32,21 +32,25 @@ export default class Contact extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
+        var _this = this;
         this.setState({ 
             loading: true, 
             patientMessageSent: false, 
             errorMessage: '' 
         });
+        console.log(this.state);
+
         fetch('/patientContact', {
-	        method: 'post',
+            method: 'POST',
+            contentType: 'application/json',
 	        body: JSON.stringify(this.state)
         }).then(function() { 
-            this.setState({
+            _this.setState({
                 loading: false, 
                 patientMessageSent: true,
             });
          }).catch(function(error) {
-            this.setState({
+            _this.setState({
                 loading: false, 
                 errorMessage: error 
             });
@@ -111,8 +115,13 @@ export default class Contact extends Component {
                     {this.state.patientMessageSent && 
                         <h3>Your message has been sent</h3>
                     }
-                    <h4>Request a call back</h4>
+                    
 
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-lg-10 mx-auto">
+                    <h4>Request a call back</h4>
                     <address>
                         <strong>Dundonald Consulting Rooms</strong>
                         <br /> 1 St Johns Wood Park
@@ -120,17 +129,18 @@ export default class Contact extends Component {
                         <br /> BT16 1RS
                     </address>
                     <p>
-                        <strong>Phone:</strong>
+                        <strong>Phone: </strong>
                         <a href="tel:+2890484840">028 9048 4840</a>
                     </p>
                     <p>
-                        <strong>Email:</strong>
+                        <strong>Email: </strong>
                         <a href="mailto:info@dundonaldconsulting.com">info@dundonaldconsulting.com</a>
                     </p>
-
+                </div>
+                <div className="col-lg-5 mx-auto">
+                    <LocationMap />
                 </div>
             </div>
-
         </div>
     </section>
  )
