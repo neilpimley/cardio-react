@@ -1,6 +1,64 @@
 import React, { Component } from 'react';
+import FontAwesome from 'react-fontawesome';
+import 'whatwg-fetch';
 
 export default class GPInformation extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            gpName: '',
+            gpPhone: '',
+            gpEmail: '',
+            practiceName: '',
+            patientName: '',
+            patientPhone: '',
+            patientEmail: '',
+            gpMessage: '',
+            loading: false,
+            messageSent: false,
+            errorMessage: ''
+        };
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+        
+        this.setState({
+          [name]: value
+        });
+      }
+
+    handleSubmit(event) {
+        var _this = this;
+        event.preventDefault();
+        this.setState({ 
+            loading: true, 
+            messageSent: false, 
+            errorMessage: '' 
+        });
+        fetch('/gpContact', {
+	        method: 'POST',
+	        body: JSON.stringify(this.state)
+        }).then(function() { 
+            _this.setState({
+                loading: false, 
+                messageSent: true,
+            });
+         }).catch(function(error) {
+            _this.setState({
+                loading: false, 
+                errorMessage: error 
+            });
+        });
+    }
+
+
     render() {
       return (
         <section className="bg-info">
@@ -12,58 +70,71 @@ export default class GPInformation extends Component {
                           and we can offer the complete range of diagnostics and treatments for your private patients.</p>
                       <p>We are very happy to discuss patients.</p>
 
-                      <form>
+                      <form onSubmit={this.handleSubmit}>
+                          <h5>GP Details</h5>
                           <div className="form-group row">
-                              <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Full Name</label>
-                              <div className="col-sm-9">
-                                  <input type="text" className="form-control" name="gpNAme" placeholder="Enter your name" />
+                              <label htmlFor="gpNAme" className="col-md-2 col-form-label">Full Name</label>
+                              <div className="col-md-4">
+                                  <input type="text" className="form-control" name="gpName" 
+                                        disabled={this.state.loading} required
+                                        placeholder="Enter your name" onChange={this.handleInputChange} />
+                              </div>
+                              <label htmlFor="practiceName" className="col-md-2 col-form-label">GP Practice</label>
+                              <div className="col-md-4">
+                                  <input type="text" className="form-control" name="practiceName"
+                                        disabled={this.state.loading} required
+                                        placeholder="Enter your GP Practice Name" onChange={this.handleInputChange}/>
                               </div>
                           </div>
                           <div className="form-group row">
-                              <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Phone numer</label>
-                              <div className="col-sm-9">
-                                  <input type="tel" className="form-control" name="gpPhone" placeholder="Enter your phone number" />
+                              <label htmlFor="gpPhone" className="col-md-2 col-form-label">Phone number</label>
+                              <div className="col-md-4">
+                                  <input type="tel" className="form-control" name="gpPhone" 
+                                        disabled={this.state.loading} required
+                                        placeholder="Enter your phone number" onChange={this.handleInputChange} />
+                              </div>
+                              <label htmlFor="gpEmail" className="col-md-2 col-form-label">Email address</label>
+                              <div className="col-md-4">
+                                  <input type="email" className="form-control" name="gpEmail" 
+                                        disabled={this.state.loading} required
+                                        placeholder="Enter your email address" onChange={this.handleInputChange}/>
+                              </div>
+                          </div>
+                          <h5>Patient Details</h5>
+                          <div className="form-group row">
+                              <label htmlFor="patientName" className="col-md-2 col-form-label">Name</label>
+                              <div className="col-md-4">
+                                  <input type="text" className="form-control" name="patientName" 
+                                        disabled={this.state.loading} required
+                                        placeholder="Enter your patient's name" onChange={this.handleInputChange} />
+                              </div>
+                              <label htmlFor="patientPhone" className="col-md-2 col-form-label">phone numer</label>
+                              <div className="col-md-4">
+                                  <input type="tel" className="form-control" name="patientPhone" 
+                                        disabled={this.state.loading} required
+                                        placeholder="Enter your patient's phone number" onChange={this.handleInputChange} />
                               </div>
                           </div>
                           <div className="form-group row">
-                              <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Email address</label>
-                              <div className="col-sm-9">
-                                  <input type="email" className="form-control" name="gpEmail" placeholder="Enter your email address" />
+                              <label htmlFor="patientEmail" className="col-md-2 col-form-label">Email address</label>
+                              <div className="col-md-6">
+                                  <input type="email" className="form-control" name="patientEmail" 
+                                        disabled={this.state.loading} required
+                                        placeholder="Enter your patient's email address" onChange={this.handleInputChange} />
                               </div>
                           </div>
                           <div className="form-group row">
-                              <label htmlFor="inputPassword" className="col-sm-3 col-form-label">GP Practice</label>
-                              <div className="col-sm-9">
-                                  <input type="email" className="form-control" name="practiceName" placeholder="Enter your GP Practice Name" />
-                              </div>
-                          </div>
-                          <div className="form-group row">
-                              <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Patient Name</label>
-                              <div className="col-sm-9">
-                                  <input type="text" className="form-control" name="patientName" placeholder="Enter your patient's name" />
-                              </div>
-                          </div>
-                          <div className="form-group row">
-                              <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Patient phone numer</label>
-                              <div className="col-sm-9">
-                                  <input type="tel" className="form-control" name="patientPhone" placeholder="Enter your patient's phone number" />
-                              </div>
-                          </div>
-                          <div className="form-group row">
-                              <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Patient email address</label>
-                              <div className="col-sm-9">
-                                  <input type="email" className="form-control" name="patientEmail" placeholder="Enter your patient's email address" />
-                              </div>
-                          </div>
-                          <div className="form-group row">
-                              <div className="col-sm-12">
-                                  <label htmlFor="comments">Comments</label>
+                              <div className="col-md-12">
+                                  <label htmlFor="gpMessage">Comments</label>
                                   <textarea className="form-control" name="gpMessage" rows="3"></textarea>
                               </div>
                           </div>
                           <div className="form-group row">
-                              <div className="col-sm-12">
-                                  <button className="btn btn-lg float-right">Send</button>
+                              <div className="col-md-12">
+                                  <button className="btn btn-lg float-right">{this.state.loading && 
+                                    <FontAwesome name='circle-o-notch' spin />
+                                }
+                                &nbsp; Send</button>
                               </div>
                           </div>
 
