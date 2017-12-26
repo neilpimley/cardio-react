@@ -38,11 +38,17 @@ export default class Contact extends Component {
             patientMessageSent: false, 
             errorMessage: '' 
         });
-        console.log(this.state);
+
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
 
         fetch('/patientContact', {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
             method: 'POST',
-            contentType: 'application/json',
 	        body: JSON.stringify(this.state)
         }).then(function() { 
             _this.setState({
