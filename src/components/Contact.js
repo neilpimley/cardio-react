@@ -79,7 +79,7 @@ export default class Contact extends Component {
 
     render() {
       return (
-    <section id="contact">
+    <section>
         <div className="container">
             <div className="row">
                 <div className="col-lg-10 mx-auto">
