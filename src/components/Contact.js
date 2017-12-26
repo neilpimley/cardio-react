@@ -18,6 +18,19 @@ export default class Contact extends Component {
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.resetMessage = this.resetMessage.bind(this);
+    }
+
+    resetMessage() {
+        this.setState({
+            patientName: '',
+            patientPhone: '',
+            patientEmail: '',
+            patientMessage: '',
+            loading: false,
+            patientMessageSent: false,
+            errorMessage: ''
+        });
     }
 
     handleInputChange(event) {
@@ -74,6 +87,7 @@ export default class Contact extends Component {
                     <p>To make an appointment with Dr McKavanagh please get in touch via the contact details below based. We
                         are happy to see self-referrals but recommend having a GP referral before booking directly/self-referring
                         to ensure you see appropriate medical personal.</p>
+                        {!this.state.patientMessageSent && 
                         <form onSubmit={this.handleSubmit}>
                         <div className="form-group row">
                             <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Full Name</label>
@@ -118,8 +132,11 @@ export default class Contact extends Component {
                             </div>
                         </div>
                     </form>
+                    }
                     {this.state.patientMessageSent && 
-                        <h3>Your message has been sent</h3>
+                        <div class="alert alert-secondary" role="alert">
+                            Your message has been sent <button type="button" class="btn btn-primary float-right" onClick={this.resetMessage}>Send another message</button>
+                        </div>
                     }
                     
 
