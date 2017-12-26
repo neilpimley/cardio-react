@@ -22,6 +22,7 @@ export default class GPInformation extends Component {
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.resetMessage = this.resetMessage.bind(this);
     }
 
     handleInputChange(event) {
@@ -62,6 +63,17 @@ export default class GPInformation extends Component {
         });
     }
 
+    resetMessage() {
+        this.setState({
+            patientName: '',
+            patientPhone: '',
+            patientEmail: '',
+            patientMessage: '',
+            loading: false,
+            messageSent: false,
+            errorMessage: ''
+        });
+    }
 
     render() {
       return (
@@ -74,6 +86,7 @@ export default class GPInformation extends Component {
                           and we can offer the complete range of diagnostics and treatments for your private patients.</p>
                       <p>We are very happy to discuss patients.</p>
 
+                    {!this.state.messageSent && 
                       <form onSubmit={this.handleSubmit}>
                           <h5>GP Details</h5>
                           <div className="form-group row">
@@ -143,7 +156,12 @@ export default class GPInformation extends Component {
                           </div>
 
                       </form>
-
+                    }
+                    {this.state.messageSent && 
+                        <div class="alert alert-secondary" role="alert">
+                            Your message has been sent <button type="button" class="btn btn-primary float-right" onClick={this.resetMessage}>Send another message</button>
+                        </div>
+                    }
                   </div>
               </div>
           </div>
