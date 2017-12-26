@@ -15,7 +15,6 @@ app.get('*', (req, res) => {
 })
 
 app.post('/patientContact', function (req, res) {
-  console.log('patientName: ' + req.body.patientName);
   const { 
     patientEmail = '', 
     patientName = '', 

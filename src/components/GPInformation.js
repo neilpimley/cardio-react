@@ -43,6 +43,10 @@ export default class GPInformation extends Component {
             errorMessage: '' 
         });
         fetch('/gpContact', {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
 	        method: 'POST',
 	        body: JSON.stringify(this.state)
         }).then(function() { 
