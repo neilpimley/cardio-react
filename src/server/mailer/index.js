@@ -2,13 +2,13 @@ import nodemailer from 'nodemailer'
 
 const transporter = nodemailer.createTransport({
   service: 'Godaddy',
-  host: "smtpout.europe.secureserver.net",  
-  secureConnection: true,
-  port: 465,
+  host: process.env.SMTP_HOST,  
+  secureConnection: process.env.SMTP_SECURE,
+  port: process.env.SMTP_PORT,
   
   auth: {
-      user: "website@drpetermckavanagh.com",
-      pass: "Card10Lurgan" 
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
   }
 });
 
@@ -16,7 +16,7 @@ const send = ({ email, name, text }) => {
   const from = name && email ? `${name} <${email}>` : `${name || email}`
   const message = {
     from,
-    to: 'mckavanagh@doctors.org.uk',
+    to: process.env.PERSONAL_ADDRESS,
     subject: `New message from ${name} sent via your website`,
     text,
     replyTo: from
