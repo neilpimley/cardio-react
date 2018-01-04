@@ -19,7 +19,7 @@
     "react-transition-group": "^2.2.1",
     "reactstrap": "^4.8.0",
     "whatwg-fetch": "^2.0.3",
-    "dns" : "file:./src/dns",
+    "dns": "file:./src/dns",
     "react-json-pretty": "^1.7.4"
   },
   "scripts": {
