@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer'
+const nodemailer  = require('nodemailer')
 
 const transporter = nodemailer.createTransport({
   service: 'Godaddy',
@@ -29,4 +29,4 @@ const send = ({ email, name, text }) => {
   })
 }
 
-export default send
+module.exports = send
