@@ -1,33 +1,37 @@
 import React, { Component } from 'react';
+import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink } from 'reactstrap';
 
 export default class NavBar extends Component {
+    constructor(props) {
+      super(props);
+    
+      this.toggle = this.toggle.bind(this);
+      this.state = {
+        isOpen: false
+      };
+    }
+    toggle() {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    }
     render() {
       return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-            <div className="container">
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarResponsive">
-                    <ul className="navbar-nav mx-auto">
-                        <li className="nav-item">
-                            <a className="nav-link js-scroll-trigger" href="#profile">Professional Profile</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link js-scroll-trigger" href="#gp-information">GP Information</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link js-scroll-trigger" href="#patient-information">Patient Information</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link js-scroll-trigger" href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <div>
+          <Navbar color="dark" dark fixed="top" className="navbar-dark" expand="md">
+            <NavbarToggler onClick={this.toggle} className="mr-2" />
+            <Collapse isOpen={this.state.isOpen} navbar>
+                <Nav className="ml-auto" navbar>
+                <NavItem>
+                    <NavLink className="js-scroll-trigger" href="#profile">Professional Profile</NavLink>
+                    <NavLink className="js-scroll-trigger" href="#gp-information">GP Information</NavLink>
+                    <NavLink className="js-scroll-trigger" href="#patient-information">Patient Information</NavLink>
+                    <NavLink className="js-scroll-trigger" href="#contact">Contact</NavLink>
+                </NavItem>
+                </Nav>
+            </Collapse>
+          </Navbar>
+        </div>
       )
     }
 }
-

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
-import { LocationMap } from './LocationMap';
 import 'whatwg-fetch';
 
 export default class Contact extends Component {
@@ -140,28 +139,6 @@ export default class Contact extends Component {
                     }
                     
 
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-lg-10 mx-auto">
-                    <h4>Request a call back</h4>
-                    <address>
-                        <strong>Dundonald Consulting Rooms</strong>
-                        <br /> 1 St Johns Wood Park
-                        <br /> Belfast
-                        <br /> BT16 1RS
-                    </address>
-                    <p>
-                        <strong>Phone: </strong>
-                        <a href="tel:+2890484840">028 9048 4840</a>
-                    </p>
-                    <p>
-                        <strong>Email: </strong>
-                        <a href="mailto:info@dundonaldconsulting.com">info@dundonaldconsulting.com</a>
-                    </p>
-                </div>
-                <div className="col-lg-5 mx-auto">
-                    <LocationMap />
                 </div>
             </div>
         </div>
