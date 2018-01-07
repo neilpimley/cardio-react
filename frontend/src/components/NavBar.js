@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactGA from 'react-ga';
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink } from 'reactstrap';
 
 export default class NavBar extends Component {
@@ -14,6 +15,12 @@ export default class NavBar extends Component {
       this.setState({
         isOpen: !this.state.isOpen
       });
+    }
+    onNavigate() {
+        ReactGA.event({
+            category: 'Navigation',
+            action: 'Clicked Link',
+        });
     }
     render() {
       return (
