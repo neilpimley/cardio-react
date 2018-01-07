@@ -159,7 +159,7 @@ export default class GPInformation extends Component {
                     }
                     {this.state.messageSent && 
                         <div class="alert alert-secondary" role="alert">
-                            Your message has been sent <button type="button" class="btn btn-primary float-right" onClick={this.resetMessage}>Send another message</button>
+                            Your message has been sent <button type="button" className="btn btn-primary float-right" onClick={this.resetMessage}>Send another message</button>
                         </div>
                     }
                   </div>
