@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactGA from 'react-ga';
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink } from 'reactstrap';
+import {Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink } from 'reactstrap';
 
 export default class NavBar extends Component {
     constructor(props) {
@@ -25,7 +25,7 @@ export default class NavBar extends Component {
     render() {
       return (
         <div>
-          <Navbar color="dark" dark fixed="top" className="navbar-dark" expand="md">
+          <Navbar color="dark" dark="true" fixed="top" className="navbar-dark" expand="md" toggleable>
             <NavbarToggler onClick={this.toggle} className="mr-2" />
             <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
