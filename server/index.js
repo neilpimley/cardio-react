@@ -1,20 +1,33 @@
-import 'babel-polyfill';
-import express from 'express';
-import bodyParser from 'body-parser';
+const express = require('express');
+const path = require('path');
+const nodemailer = require('nodemailer')
+const bodyParser = require('body-parser');
+const mailer = require('./mailer');
+const app = express();
+const PORT = process.env.PORT || 4000;
 
-import mailer from './mailer'
+// Priority serve any static files.
+app.use(express.static(path.resolve(__dirname, '../frontend/build')));
 
-const app = express()
+// Answer API requests.
+app.get('/api', function (req, res) {
+  res.set('Content-Type', 'application/json');
+  res.send('{"message":"Hello from the custom server!"}');
+});
+
+// All remaining requests return the React app, so it can handle routing.
+app.get('*', function(request, response) {
+  response.sendFile(path.resolve(__dirname, '../frontend/build', 'index.html'));
+});
+
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
 
-app.get('*', (req, res) => {
-  res.send('Server is working. Please post at "/patientContact" or "/gpContact" to submit a message.')
-})
-
 app.post('/patientContact', function (req, res) {
+  console.log(req.body);
+
   const { 
     patientEmail = '', 
     patientName = '', 
@@ -30,11 +43,14 @@ app.post('/patientContact', function (req, res) {
 
   mailer({ email: patientEmail, name: patientName, text }).then(() => {
     console.log(`Sent the message "${patientMessage}" from <${patientName}> ${patientEmail}.`);
-    res.redirect('/#success');
+      res.set('Content-Type', 'application/json');
+      res.send('{"success": true, "error": "" }');
   }).catch((error) => {
     console.log(`Failed to send the message "${patientMessage}" from <${patientName}> ${patientEmail} with the error ${error && error.message}`);
-    res.redirect('/#error');
+    res.set('Content-Type', 'application/json');
+    res.send('{"success": false, "error": "Failed to send the message" }');
   });
+
 })
 
 app.post('/gpContact', (req, res) => {
@@ -65,8 +81,6 @@ app.post('/gpContact', (req, res) => {
   })
 })
 
-const PORT = process.env.PORT || 4000;
-
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}!`);
-})
+app.listen(PORT, function () {
+  console.log(`Listening on port ${PORT}`);
+});
