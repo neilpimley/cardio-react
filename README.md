@@ -1,4 +1,4 @@
-# Project Title
+# Scrolling SPA for personal profile website
 
 Professional profile single page scrolling website for Dr. Peter McKavanagh built in React and NodeJS
 
