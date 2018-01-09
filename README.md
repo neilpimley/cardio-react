@@ -32,8 +32,8 @@ Requies an .env file to be added to the root with the following variables
 EMAIL_USER= 
 EMAIL_PASS=
 SMTP_HOST=
-SMTP_PORT=465
-SMTP_SECURE=true
+SMTP_PORT=
+SMTP_SECURE=
 PERSONAL_ADDRESS=
 ```
 install the Heroku Cli (https://devcenter.heroku.com/articles/heroku-cli) and run 
