@@ -17,7 +17,6 @@ Professional profile single page scrolling website for Dr. Peter McKavanagh buil
 ## Usage
 Feel free to chop and change and use it for a simple single page website
 
-<<<<<<< HEAD
 To clone the repo and 
 ```
 $ git clone https://github.com/neilpimley/cardio-react.git
@@ -41,8 +40,6 @@ install the Heroku Cli (https://devcenter.heroku.com/articles/heroku-cli) and ru
 ```
 heroku local
 ```
-=======
->>>>>>> development
 
 ## License
 
