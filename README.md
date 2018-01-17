@@ -9,7 +9,7 @@ Professional profile single page scrolling website for Dr. Peter McKavanagh buil
 * [Bootstrap](http://getbootstrap.com/) - Boostrap for layouts and components
 * [reactstrap](https://reactstrap.github.io/) - UI components
 * [FontAwesome](http://fontawesome.io/) - icons
-* [Nodemailer](https://nodemailer.com/) - Sedning emails from NodeJS
+* [Nodemailer](https://nodemailer.com/) - Sending emails from NodeJS
 
 * [Heroku](https://signup.heroku.com/) - Hosted on free plan
 
