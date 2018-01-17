@@ -1,6 +1,6 @@
 {
   "name": "cardio-react-ui",
-  "version": "1.0",
+  "version": "1.0.0",
   "private": true,
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "body-parser": "^1.17.2",
-    "bootstrap": "^4.0.0-beta.3",
+    "bootstrap": "^4.0.0-beta.2",
     "classnames": "^2.2.3",
     "dns": "file:./src/dns",
     "express": "^4.15.4",

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import profile from '../images/profile2.jpg';
+import profileSuit from '../images/profile-suit.jpg';
+import profileScrubs from '../images/profile-scrubs.jpg';
 import linkedin from '../images/linkedin.png';
 
 export default class Profile extends Component {
@@ -15,10 +16,10 @@ export default class Profile extends Component {
                     <p>MB BCh BAO, MRCP(UK), MRCP(Ire), MMedSc, PhD</p>
                 </div>
 
-                <div className="col-xs-12 col-md-3">
-                    <img src={profile} className="img-fluid img-thumbnail float-left" alt="Dr. Peter McKavanagh" />
+                <div className="col-xs-12 col-md-5">
+                    <img src={profileSuit} className="img-fluid img-thumbnail float-left" alt="Dr. Peter McKavanagh" />
                 </div>
-                <div className="col-xs-12 col-md-9 d-xs-none">
+                <div className="col-xs-12 col-md-7 d-xs-none">
                     <h1 className="profile-name">Dr Peter McKavanagh</h1>
                     <h5>MB BCh BAO, MRCP(UK), MRCP(Ire), MMedSc, PhD</h5>
                     <p>A dedicated consultant Cardiologist working at the Ulster and Royal Victoria Hospitals in Belfast. Areas
