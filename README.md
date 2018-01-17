@@ -14,9 +14,9 @@ Professional profile single page scrolling website for Dr. Peter McKavanagh buil
 * [Heroku](https://signup.heroku.com/) - Hosted on free plan
 
 
-## Contributing
+## Usage
+Feel free to chop and change and use it for a simple single page website
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## License
 
