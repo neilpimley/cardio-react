@@ -90,7 +90,7 @@ export default class GPInformation extends Component {
                       <form onSubmit={this.handleSubmit}>
                           <h5>GP Details</h5>
                           <div className="form-group row">
-                              <label htmlFor="gpNAme" className="col-md-2 col-form-label">Full Name</label>
+                              <label htmlFor="gpNAme" className="col-md-2 col-form-label">Full name</label>
                               <div className="col-md-4">
                                   <input type="text" className="form-control" name="gpName" 
                                         disabled={this.state.loading} required

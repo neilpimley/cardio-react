@@ -89,7 +89,7 @@ export default class Contact extends Component {
                         {!this.state.patientMessageSent && 
                         <form onSubmit={this.handleSubmit}>
                         <div className="form-group row">
-                            <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Full Name</label>
+                            <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Full name</label>
                             <div className="col-sm-9">
                                 <input type="text" className="form-control" name="patientName"
                                     disabled={this.state.loading} required
