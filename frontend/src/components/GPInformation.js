@@ -125,7 +125,7 @@ export default class GPInformation extends Component {
                                         disabled={this.state.loading} required
                                         placeholder="Enter your patient's name" onChange={this.handleInputChange} />
                               </div>
-                              <label htmlFor="patientPhone" className="col-md-2 col-form-label">phone numer</label>
+                              <label htmlFor="patientPhone" className="col-md-2 col-form-label">Phone numer</label>
                               <div className="col-md-4">
                                   <input type="tel" className="form-control" name="patientPhone" 
                                         disabled={this.state.loading} required
