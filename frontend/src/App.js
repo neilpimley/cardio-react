@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 ReactGA.initialize('UA-112057230-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 class App extends Component {
   render() {
