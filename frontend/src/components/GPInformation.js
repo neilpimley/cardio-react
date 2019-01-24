@@ -80,7 +80,7 @@ export default class GPInformation extends Component {
         <section className="bg-info">
           <div className="container">
               <div className="row">
-                  <div className="col-lg-10 mx-auto text-white">
+                  <div className="col-lg-12 mx-auto text-white">
                       <h2>GP Information</h2>
                       <p>We have set up to provide a prompt service for private patients in Northern Ireland. By working together
                           and we can offer the complete range of diagnostics and treatments for your private patients.</p>

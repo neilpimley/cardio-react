@@ -81,7 +81,7 @@ export default class Contact extends Component {
     <section>
         <div className="container">
             <div className="row">
-                <div className="col-lg-10 mx-auto">
+                <div className="col-lg-12 mx-auto">
                     <h2>Contact Information</h2>
                     <p>To make an appointment with Dr McKavanagh please get in touch via the contact details below based. We
                         are happy to see self-referrals but recommend having a GP referral before booking directly/self-referring
