@@ -25,7 +25,7 @@ export default class NavBar extends Component {
     render() {
       return (
         <div>
-          <Navbar color="dark" dark fixed="top" className="navbar-dark" expand="md">
+          <Navbar color="dark" fixed="top" className="navbar-dark" expand="md">
             <NavbarToggler onClick={this.toggle} className="mr-2" />
             <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>

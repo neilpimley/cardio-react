@@ -1,5 +1,5 @@
-import React from "react"
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import React from "react";
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 
 export const MapComponent = withScriptjs(withGoogleMap((props) =>
   <GoogleMap
@@ -9,4 +9,3 @@ export const MapComponent = withScriptjs(withGoogleMap((props) =>
     {props.isMarkerShown && <Marker position={{ lat: 54.5946667, lng: -5.8755626 }} />}
   </GoogleMap>
 ))
-
