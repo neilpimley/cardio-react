@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import profileSuit from '../images/profile-suit.jpg';
-import profileScrubs from '../images/profile-scrubs.jpg';
+//import profileScrubs from '../images/profile-scrubs.jpg';
 import linkedin from '../images/linkedin.png';
 
 export default class Profile extends Component {
