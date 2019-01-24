@@ -122,12 +122,12 @@ export default class Contact extends Component {
                         </div>
                         <div className="form-group row">
                             <div className="col-sm-12">
-                                <button type="submit" className="btn btn-lg float-right" 
+                                <button type="submit" className="btn btn-lg float-right btn-light" 
                                 disabled={this.state.loading}>
                                 {this.state.loading && 
                                     <FontAwesome name='circle-o-notch' spin />
                                 }
-                                &nbsp; Send</button>
+                                Send</button>
                             </div>
                         </div>
                     </form>
