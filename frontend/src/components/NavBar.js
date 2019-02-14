@@ -30,8 +30,14 @@ export default class NavBar extends Component {
                 <Nav className="ml-auto" navbar>
                 <NavItem>
                     <NavLink className="js-scroll-trigger" href="#profile">Professional Profile</NavLink>
+                </NavItem>
+                <NavItem>
                     <NavLink className="js-scroll-trigger" href="#gp-information">GP Information</NavLink>
+                </NavItem>
+                <NavItem>
                     <NavLink className="js-scroll-trigger" href="#patient-information">Patient Information</NavLink>
+                </NavItem>
+                <NavItem>
                     <NavLink className="js-scroll-trigger" href="#contact">Contact</NavLink>
                 </NavItem>
                 </Nav>
