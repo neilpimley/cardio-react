@@ -24,10 +24,10 @@ export default class NavBar extends Component {
     }
     render() {
       return (
-          <Navbar color="dark" fixed="top" className="navbar-dark">
+          <Navbar color="dark" fixed="top" className="navbar-dark navbar-expand-md">
             <NavbarToggler onClick={this.toggle} className="mr-2" />
             <Collapse isOpen={this.state.isOpen} navbar>
-                <Nav className="ml-auto" navbar>
+                <Nav className="mx-auto" navbar>
                 <NavItem>
                     <NavLink className="js-scroll-trigger" href="#profile">Professional Profile</NavLink>
                 </NavItem>
