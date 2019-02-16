@@ -24,21 +24,25 @@ export default class NavBar extends Component {
     }
     render() {
       return (
-        <div>
-          <Navbar color="dark" fixed="top" className="navbar-dark" expand="md">
+          <Navbar color="dark" fixed="top" className="navbar-dark navbar-expand-md">
             <NavbarToggler onClick={this.toggle} className="mr-2" />
             <Collapse isOpen={this.state.isOpen} navbar>
-                <Nav className="ml-auto" navbar>
+                <Nav className="mx-auto" navbar>
                 <NavItem>
                     <NavLink className="js-scroll-trigger" href="#profile">Professional Profile</NavLink>
+                </NavItem>
+                <NavItem>
                     <NavLink className="js-scroll-trigger" href="#gp-information">GP Information</NavLink>
+                </NavItem>
+                <NavItem>
                     <NavLink className="js-scroll-trigger" href="#patient-information">Patient Information</NavLink>
+                </NavItem>
+                <NavItem>
                     <NavLink className="js-scroll-trigger" href="#contact">Contact</NavLink>
                 </NavItem>
                 </Nav>
             </Collapse>
           </Navbar>
-        </div>
       )
     }
 }

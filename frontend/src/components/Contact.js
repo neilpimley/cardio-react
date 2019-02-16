@@ -81,7 +81,7 @@ export default class Contact extends Component {
     <section>
         <div className="container">
             <div className="row">
-                <div className="col-lg-10 mx-auto">
+                <div className="col-lg-12 mx-auto">
                     <h2>Contact Information</h2>
                     <p>To make an appointment with Dr McKavanagh please get in touch via the contact details below based. We
                         are happy to see self-referrals but recommend having a GP referral before booking directly/self-referring
@@ -89,7 +89,7 @@ export default class Contact extends Component {
                         {!this.state.patientMessageSent && 
                         <form onSubmit={this.handleSubmit}>
                         <div className="form-group row">
-                            <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Full Name</label>
+                            <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Full name</label>
                             <div className="col-sm-9">
                                 <input type="text" className="form-control" name="patientName"
                                     disabled={this.state.loading} required
@@ -122,12 +122,12 @@ export default class Contact extends Component {
                         </div>
                         <div className="form-group row">
                             <div className="col-sm-12">
-                                <button type="submit" className="btn btn-lg float-right" 
+                                <button type="submit" className="btn btn-lg float-right btn-light" 
                                 disabled={this.state.loading}>
                                 {this.state.loading && 
                                     <FontAwesome name='circle-o-notch' spin />
                                 }
-                                &nbsp; Send</button>
+                                Send</button>
                             </div>
                         </div>
                     </form>

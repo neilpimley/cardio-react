@@ -80,7 +80,7 @@ export default class GPInformation extends Component {
         <section className="bg-info">
           <div className="container">
               <div className="row">
-                  <div className="col-lg-10 mx-auto text-white">
+                  <div className="col-lg-12 mx-auto text-white">
                       <h2>GP Information</h2>
                       <p>We have set up to provide a prompt service for private patients in Northern Ireland. By working together
                           and we can offer the complete range of diagnostics and treatments for your private patients.</p>
@@ -90,7 +90,7 @@ export default class GPInformation extends Component {
                       <form onSubmit={this.handleSubmit}>
                           <h5>GP Details</h5>
                           <div className="form-group row">
-                              <label htmlFor="gpNAme" className="col-md-2 col-form-label">Full Name</label>
+                              <label htmlFor="gpNAme" className="col-md-2 col-form-label">Full name</label>
                               <div className="col-md-4">
                                   <input type="text" className="form-control" name="gpName" 
                                         disabled={this.state.loading} required
@@ -125,7 +125,7 @@ export default class GPInformation extends Component {
                                         disabled={this.state.loading} required
                                         placeholder="Enter your patient's name" onChange={this.handleInputChange} />
                               </div>
-                              <label htmlFor="patientPhone" className="col-md-2 col-form-label">phone numer</label>
+                              <label htmlFor="patientPhone" className="col-md-2 col-form-label">Phone numer</label>
                               <div className="col-md-4">
                                   <input type="tel" className="form-control" name="patientPhone" 
                                         disabled={this.state.loading} required
@@ -148,10 +148,10 @@ export default class GPInformation extends Component {
                           </div>
                           <div className="form-group row">
                               <div className="col-md-12">
-                                  <button className="btn btn-lg float-right">{this.state.loading && 
+                                  <button className="btn btn-lg float-right btn-light">{this.state.loading && 
                                     <FontAwesome name='circle-o-notch' spin />
                                 }
-                                &nbsp; Send</button>
+                                Send</button>
                               </div>
                           </div>
 

@@ -24,7 +24,7 @@ export default class PatientInformation extends Component {
         <section>
           <div className="container">
               <div className="row">
-                  <div className="col-lg-10 mx-auto">
+                  <div className="col-lg-12 mx-auto">
                       <h2>Patient information </h2>
 
                       <Nav tabs className="nav-fill">

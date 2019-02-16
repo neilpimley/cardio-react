@@ -42,7 +42,7 @@ export default class Profile extends Component {
         <section className="bg-secondary">
         <div className="container">
             <div className="row">
-                <div className="col-lg-10 mx-auto text-white">
+                <div className="col-lg-12 mx-auto text-white">
                     <h2>Professional Profile</h2>
                     <p>All three of his degrees were from Queen's University Belfast. His primary Medical Degree with distinction
                         was in 2003; his Master in Medical Education with distinction was in 2010; and his PhD in Cardiac
