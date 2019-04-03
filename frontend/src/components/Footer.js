@@ -21,7 +21,7 @@ export default class Footer extends Component {
             </p>
             <p className="text-white">
                 <strong>Email: </strong>
-                <a href="mailto:info@dundonaldconsulting.com" className="text-white">info@dundonaldconsulting.com</a>
+                <a href="mailto:belfastcardiologist@gmail.com" className="text-white">belfastcardiologist@gmail.com</a>
             </p>
         </div>
         <div className="col-lg-6">
