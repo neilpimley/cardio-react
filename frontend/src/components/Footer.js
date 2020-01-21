@@ -16,8 +16,8 @@ export default class Footer extends Component {
                 <br /> BT16 1RS
             </address>
             <p className="text-white">
-                <strong>Phone: </strong>
-                <a href="tel:+2890484840" className="text-white">028 9048 4840</a>
+                <strong>Phone or text: </strong>
+                <a href="tel:+447506855885" className="text-white">07506 855885</a>
             </p>
             <p className="text-white">
                 <strong>Email: </strong>

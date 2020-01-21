@@ -3,7 +3,6 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 import ReactGA from 'react-ga';
 import NavBar from './components/NavBar';
 import Profile from './components/Profile';
-import GPInformation from './components/GPInformation';
 import PatientInformation from './components/PatientInformation';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -18,9 +17,6 @@ class App extends Component {
         <NavBar />
         <ScrollableAnchor id={'profile'}>
           <Profile />
-        </ScrollableAnchor>
-        <ScrollableAnchor id={'gp-information'}>
-          <GPInformation />
         </ScrollableAnchor>
         <ScrollableAnchor id={'patient-information'}>
           <PatientInformation />

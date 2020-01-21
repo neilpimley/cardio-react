@@ -50,8 +50,8 @@ export default class PatientInformation extends Component {
                     <TabContent activeTab={this.state.activeTab}>
                     <TabPane tabId="1">
                         <p>Cardiovascular disease remains one of the most significant causes of death in Northern Ireland.
-                            In 2015 27.4% of all deaths in the UK were caused by cardiovascular disease. Common cardiology
-                            symptoms include chest pain, palpitation, shortness of breath, dizziness, blackout/collapses.
+                            In 2015, 27.4% of all deaths in the UK were caused by cardiovascular disease. Common cardiology
+                            symptoms include chest pain, palpitation, shortness of breath, dizziness, blackout and collapses.
                             These are often seen with common cardiology conditions such as:</p>
                         <ul>
                             <li>Angina </li>
@@ -65,16 +65,15 @@ export default class PatientInformation extends Component {
                             <li>Vasovagal Syncope</li>
                         </ul>
 
-                        <p>Dr McKavanagh is happy to answer any questions that you may have. For information about any
-                            additional conditions not featured within the site, please contact us for more information.
-                            Patients can self-refer but we do recommend input from your own GP to help with ensuring
-                            you are dealt with appropriately.</p>
+                        <p>For information about any additional conditions not featured, please contact us and Dr McKavanagh 
+                            will be happy to answer any questions. Patients can self-refer but if in doubt your own GP can help 
+                            ensure you are dealt with appropriately.</p>
                     </TabPane>
                     <TabPane tabId="2">
-                        <p>To help with diagnosis, some cardiology tests may be necessary. These may include</p>
+                        <p>To help with diagnosis, some cardiology tests may be necessary. These may include:</p>
 
                         <ul>
-                            <li>Electrocardiogram (ECG) (an electrical tracing of the rhythm heart) </li>
+                            <li>Electrocardiogram (ECG) (an electrical tracing of the heart rhythm) </li>
                             <li>Echocardiography (an ultrasound of the heart)</li>
                             <li>24HR Blood Pressure Monitoring (a device to assess blood pressure over 24 hours)</li>
                             <li>Exercise Stress Test (EST) (a treadmill test to assess your ECG and Blood Pressure when
