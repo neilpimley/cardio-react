@@ -83,9 +83,7 @@ export default class Contact extends Component {
             <div className="row">
                 <div className="col-lg-12 mx-auto">
                     <h2>Contact Information</h2>
-                    <p>To make an appointment with Dr McKavanagh please get in touch via the contact details below based. We
-                        are happy to see self-referrals but recommend having a GP referral before booking directly/self-referring
-                        to ensure you see appropriate medical personal.</p>
+                    <p>To make an appointment with Dr McKavanagh please get in touch via the contact details below.</p>
                         {!this.state.patientMessageSent && 
                         <form onSubmit={this.handleSubmit}>
                         <div className="form-group row">
@@ -97,7 +95,7 @@ export default class Contact extends Component {
                             </div>
                         </div>
                         <div className="form-group row">
-                            <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Phone numer</label>
+                            <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Phone number</label>
                             <div className="col-sm-9">
                                 <input type="tel" className="form-control" name="patientPhone" 
                                     disabled={this.state.loading} required
