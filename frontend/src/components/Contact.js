@@ -83,7 +83,8 @@ export default class Contact extends Component {
             <div className="row">
                 <div className="col-lg-12 mx-auto">
                     <h2>Contact Information</h2>
-                    <p>To make an appointment with Dr McKavanagh please get in touch via the contact details below.</p>
+                    <p>To make an appointment with Dr McKavanagh please phone or text <a href="tel:+447506855885">07506 855885</a>
+                     or fill in the form below.</p>
                         {!this.state.patientMessageSent && 
                         <form onSubmit={this.handleSubmit}>
                         <div className="form-group row">

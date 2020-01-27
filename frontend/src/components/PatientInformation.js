@@ -110,19 +110,20 @@ export default class PatientInformation extends Component {
 
 
                         <h5>Self-funding</h5>
-                        <p>If you do not have private medical insurance, you will be responsible for all costs incurred
-                            for consultations and investigations. Self-funding patients must settle all accounts
-                            on the day of consultation.</p>
+                        <p>If you do not have private medical insurance, you will be responsible for all costs incurred for 
+                            consultations and investigations. Self-funding patients must settle all accounts on the day of 
+                            consultation. After the initial meeting tests can be arranged on the NHS, although normal waiting 
+                            times will apply.</p>
 
                         <h5>Consultation fees</h5>
                         <table className="table table-striped table-bordered">
                         <tbody>
                             <tr>
-                                <td>Initial consultation self pay</td>
+                                <td>Initial consultation self-pay</td>
                                 <td> £175</td>
                             </tr>
                             <tr>
-                                <td>Follow up self pay</td>
+                                <td>Follow up self-pay</td>
                                 <td>£140</td>
                             </tr>
                             <tr>
