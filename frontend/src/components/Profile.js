@@ -32,7 +32,7 @@ export default class Profile extends Component {
                     </ul>
                     <p className="ml-2">
                         Our cardiology clinic offers top quality care in a comfortable environment, with very competitive prices. 
-                        Our mission is to investigate and treat our patients quickly so that they can achieve long-term #
+                        Our mission is to investigate and treat our patients quickly so that they can achieve long-term
                         cardiovascular health. 
                     </p>
                 </div>
