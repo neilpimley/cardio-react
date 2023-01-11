@@ -1,9 +1,7 @@
 const nodemailer  = require('nodemailer')
 
 const transporter = nodemailer.createTransport({
-  service: 'Godaddy',
   host: process.env.SMTP_HOST,  
-  secureConnection: process.env.SMTP_SECURE,
   port: process.env.SMTP_PORT,
   
   auth: {
