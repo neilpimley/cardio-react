@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 const send = ({ email, name, text }) => {
   const from = name && email ? `${name} <${email}>` : `${name || email}`
   const message = {
-    from: process.env.PERSONAL_ADDRESS,
+    from: process.env.VERIFIED_EMAIL_ADDRESS,
     to: process.env.PERSONAL_ADDRESS,
     subject: `New message from ${from} sent via your website`,
     text,
