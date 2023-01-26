@@ -9,19 +9,19 @@ export default class Footer extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6">
-                            <address className="text-white">
+                            <address>
                                 <strong>Dundonald Consulting Rooms</strong>
                                 <br /> 1 St Johns Wood Park
                                 <br /> Belfast
                                 <br /> BT16 1RS
                             </address>
-                            <p className="text-white">
+                            <p>
                                 <strong>Phone: </strong>
-                                <a href="tel:+442890484840" className="text-white">028 9048 4840</a>
+                                <a href="tel:+442890484840">028 9048 4840</a>
                             </p>
-                            <p className="text-white">
+                            <p>
                                 <strong>Email: </strong>
-                                <a href="mailto:belfastcardiologist@gmail.com" className="text-white">belfastcardiologist@gmail.com</a>
+                                <a href="mailto:belfastcardiologist@gmail.com">belfastcardiologist@gmail.com</a>
                             </p>
                         </div>
                         <div className="col-lg-6">

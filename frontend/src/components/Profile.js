@@ -40,7 +40,7 @@ export default class Profile extends Component {
                 <section className="bg-light-blue">
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-12 mx-auto text-white">
+                            <div className="col-lg-12 mx-auto">
                                 <h2>Professional Profile</h2>
                                 <p>All three of Dr McKavanagh’s degrees were from Queen's University Belfast. His primary medical degree with distinction was in 2003; his MSc in Clinical Education with distinction was in 2010; and his PhD in Cardiac CT was in 2016. He has a keen interest in research having published numerous papers and given international presentations. He was also runner-up in the European Society of Cardiology Young Investigator Award in 2013.  </p>
 
