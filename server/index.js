@@ -1,4 +1,5 @@
 const express = require('express');
+const enforce = require('express-sslify');
 const path = require('path');
 const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser');
@@ -9,6 +10,8 @@ const PORT = process.env.PORT || 4000;
 // Priority serve any static files.
 app.use(express.static(path.resolve(__dirname, '../frontend/build')));
 
+app.use(enforce.HTTPS());
+
 // Answer API requests.
 app.get('/api', function (req, res) {
   res.set('Content-Type', 'application/json');
@@ -16,7 +19,7 @@ app.get('/api', function (req, res) {
 });
 
 // All remaining requests return the React app, so it can handle routing.
-app.get('*', function(request, response) {
+app.get('*', function (request, response) {
   response.sendFile(path.resolve(__dirname, '../frontend/build', 'index.html'));
 });
 
@@ -28,11 +31,11 @@ app.use(bodyParser.json());
 app.post('/patientContact', function (req, res) {
   console.log(req.body);
 
-  const { 
-    patientEmail = '', 
-    patientName = '', 
-    patientPhone = '', 
-    patientMessage = '' 
+  const {
+    patientEmail = '',
+    patientName = '',
+    patientPhone = '',
+    patientMessage = ''
   } = req.body;
 
   const text = `
@@ -43,8 +46,8 @@ app.post('/patientContact', function (req, res) {
 
   mailer({ email: patientEmail, name: patientName, text }).then(() => {
     console.log(`Sent the message "${patientMessage}" from <${patientName}> ${patientEmail}.`);
-      res.set('Content-Type', 'application/json');
-      res.send('{"success": true, "error": "" }');
+    res.set('Content-Type', 'application/json');
+    res.send('{"success": true, "error": "" }');
   }).catch((error) => {
     console.log(`Failed to send the message "${patientMessage}" from <${patientName}> ${patientEmail} with the error ${error && error.message}`);
     res.set('Content-Type', 'application/json');
@@ -54,7 +57,7 @@ app.post('/patientContact', function (req, res) {
 })
 
 app.post('/gpContact', (req, res) => {
-  const { 
+  const {
     gpName = '',
     gpPhone = '',
     gpEmail = '',
