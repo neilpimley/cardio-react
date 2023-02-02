@@ -1,16 +1,17 @@
 const express = require('express');
-const enforce = require('express-sslify');
 const path = require('path');
 const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser');
 const mailer = require('./mailer');
 const app = express();
 const PORT = process.env.PORT || 4000;
+import sslRedirect from 'heroku-ssl-redirect';
+
+// Enable ssl redirect
+app.use(sslRedirect());
 
 // Priority serve any static files.
 app.use(express.static(path.resolve(__dirname, '../frontend/build')));
-
-app.use(enforce.HTTPS());
 
 // Answer API requests.
 app.get('/api', function (req, res) {
