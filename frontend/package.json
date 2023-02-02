@@ -17,7 +17,7 @@
     "bootstrap": "^4.2.1",
     "classnames": "^2.2.6",
     "dns": "file:./src/dns",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "fetch": "^1.1.0",
     "font-awesome": "^4.7.0",
     "heroku-ssl-redirect": "^0.1.1",
