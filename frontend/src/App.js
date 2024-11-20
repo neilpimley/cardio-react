@@ -7,7 +7,7 @@ import PatientInformation from './components/PatientInformation';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-ReactGA.initialize('UA-133177479-1');
+ReactGA.initialize('G-FTDJ83BE0Q');
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 class App extends Component {
