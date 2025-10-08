@@ -62,19 +62,39 @@ export default class Contact extends Component {
             },
             method: 'POST',
 	        body: JSON.stringify(this.state)
-        }).then(function() { 
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            if (data.success) {
+                this.setState({
+                    loading: false,
+                    patientMessageSent: true,
+                    errorMessage: null
+                });
+            } else {
+                this.setState({
+                    loading: false,
+                    patientMessageSent: false,
+                    errorMessage: data.error || 'An unexpected error occurred.'
+                });
+            }
+        })
+        .catch(function(error) {
+            console.log('Error:', error);
             _this.setState({
                 loading: false, 
-                patientMessageSent: true,
-            });
-         }).catch(function(error) {
-            _this.setState({
-                loading: false, 
-                errorMessage: error 
+                patientMessageSent: false,
+                errorMessage: error.message || 'Network error. Please try again.'
             });
         });
     }
 
+    handlePhoneClick = () => {
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-769199339/tlWNCPyPpvMZEOuZ5O4C',
+        });
+    };
 
     render() {
       return (
@@ -83,7 +103,7 @@ export default class Contact extends Component {
             <div className="row">
                 <div className="col-lg-12 mx-auto">
                     <h2>Contact Information</h2>
-                    <p>To make an appointment with Dr McKavanagh please phone <a href="tel:+442890484840">028 9048 4840</a> or fill in the form below.</p>
+                    <p>To make an appointment with Dr McKavanagh please phone <a href="tel:+442890484840" onClick={this.handlePhoneClick}>028 9048 4840</a> or fill in the form below.</p>
                         {!this.state.patientMessageSent && 
                         <form onSubmit={this.handleSubmit}>
                         <div className="form-group row">
@@ -128,6 +148,11 @@ export default class Contact extends Component {
                                 Send</button>
                             </div>
                         </div>
+                        {this.state.errorMessage && 
+                            <div class="alert alert-danger" role="alert">
+                                {this.state.errorMessage}
+                            </div>
+                        }
                     </form>
                     }
                     {this.state.patientMessageSent && 
