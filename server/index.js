@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser');
 const mailer = require('./mailer');
 const app = express();
@@ -41,12 +40,12 @@ app.post('/patientContact', function (req, res) {
     "${patientMessage}"
     `;
 
-  mailer({ email: patientEmail, name: patientName, text }).then(() => {
+  mailer({ msg: text }).then(() => {
     console.log(`Sent the message "${patientMessage}" from <${patientName}> ${patientEmail}.`);
     res.set('Content-Type', 'application/json');
     res.send('{"success": true, "error": "" }');
   }).catch((error) => {
-    console.log(`Failed to send the message "${patientMessage}" from <${patientName}> ${patientEmail} with the error ${error && error.message}`);
+    console.log(`Failed to send the message "${patientMessage}" from <${patientName}> ${patientEmail} with the error: ${error && error.body && error.body.message}`);
     res.set('Content-Type', 'application/json');
     res.send('{"success": false, "error": "Failed to send the message" }');
   });
@@ -76,7 +75,7 @@ app.post('/gpContact', (req, res) => {
     console.log(`Sent the email from <${gpName}> ${gpEmail}.`);
     res.redirect('/#success');
   }).catch((error) => {
-    console.log(`Failed to send the email from <${gpName}> ${gpEmail} with the error ${error && error.message}`);
+    console.log(`Failed to send the email from <${gpName}> ${gpEmail} with the error: ${error && error.body && error.body.message}`);
     res.redirect('/#error');
   })
 })
