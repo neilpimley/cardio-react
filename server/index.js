@@ -3,7 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const mailer = require('./mailer');
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 
 // Priority serve any static files.
 app.use(express.static(path.resolve(__dirname, '../frontend/build')));
@@ -45,6 +45,7 @@ app.post('/patientContact', function (req, res) {
     res.set('Content-Type', 'application/json');
     res.send('{"success": true, "error": "" }');
   }).catch((error) => {
+    console.error(error );
     console.log(`Failed to send the message "${patientMessage}" from <${patientName}> ${patientEmail} with the error: ${error && error.body && error.body.message}`);
     res.set('Content-Type', 'application/json');
     res.send('{"success": false, "error": "Failed to send the message" }');
