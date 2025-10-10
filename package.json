@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Website of Dr. Peter McKavanagh, Cardiologist based in Belfast",
   "engines": {
-    "node": "6.11.x"
+    "node": ">=18 <23"
   },
   "scripts": {
     "start": "node server",
