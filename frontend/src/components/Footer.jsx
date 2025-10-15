@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { MapComponent } from './MapComponent';
+import MapComponent from './MapComponent';
 
 export default class Footer extends Component {
     render() {
