@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Priority serve any static files.
-app.use(express.static(path.resolve(__dirname, '../frontend/build')));
+app.use(express.static(path.resolve(__dirname, '../frontend/dist')));
 
 // Answer API requests.
 app.get('/api', function (req, res) {
@@ -16,7 +16,7 @@ app.get('/api', function (req, res) {
 
 // All remaining requests return the React app, so it can handle routing.
 app.get('*', function (request, response) {
-  response.sendFile(path.resolve(__dirname, '../frontend/build', 'index.html'));
+  response.sendFile(path.resolve(__dirname, '../frontend/dist', 'index.html'));
 });
 
 app.use(bodyParser.urlencoded({
