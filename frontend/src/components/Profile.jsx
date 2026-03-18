@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactGA from 'react-ga4';
 import profileScrubs from '../images/profile-scrubs.jpg';
 
 export default class Profile extends Component {
@@ -16,6 +17,17 @@ export default class Profile extends Component {
 
                             <div className="col-xs-12 col-md-5">
                                 <img src={profileScrubs} className="img-fluid img-thumbnail float-left" alt="Dr. Peter McKavanagh" />
+                                <div style={{ marginTop: '20px' }}>
+                                    <button
+                                        className="btn btn-danger w-100"
+                                        onClick={() => {
+                                            document.querySelector('#booking')?.scrollIntoView({ behavior: 'smooth' });
+                                            ReactGA.event({ category: 'Navigation', action: 'Clicked Button', label: 'Book Appointment from Profile' });
+                                        }}
+                                    >
+                                        Book Appointment
+                                    </button>
+                                </div>
                             </div>
                             <div className="col-xs-12 col-md-7 d-xs-none">
                                 <h1 className="profile-name">Dr Peter McKavanagh</h1>

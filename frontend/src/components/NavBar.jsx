@@ -76,28 +76,6 @@ export default class NavBar extends Component {
                 </ScrollLink>
               </NavLink>
             </NavItem>
-
-            <NavItem>
-            <NavLink tag="span" className="nav-link">
-              <ScrollLink
-                to="booking"
-                smooth
-                duration={400}
-                offset={-80}
-                onClick={() => this.handleNavClick('Book Appointment')}
-                style={{
-                  cursor: 'pointer',
-                  backgroundColor: '#c0392b',
-                  color: '#fff',
-                  padding: '6px 16px',
-                  borderRadius: '4px',
-                  fontWeight: '600',
-                }}
-              >
-                Book Appointment
-              </ScrollLink>
-            </NavLink>
-          </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
