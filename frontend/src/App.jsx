@@ -3,6 +3,7 @@ import { Element } from 'react-scroll';
 import ReactGA from 'react-ga4';
 import NavBar from './components/NavBar';
 import Profile from './components/Profile';
+import BookingWidget from './components/BookingWidget';
 import PatientInformation from './components/PatientInformation';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -38,6 +39,9 @@ class App extends Component {
         </Element >
         <Element name="contact">
           <Contact />
+        </Element >
+        <Element name="booking">
+          <BookingWidget  />
         </Element >
         <Footer />
       </div>
