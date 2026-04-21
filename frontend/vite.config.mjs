@@ -5,7 +5,12 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/': {
+      '/patientContact': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+        secure: false,
+      },
+      '/api': {
         target: 'http://localhost:5000',
         changeOrigin: true,
         secure: false,
