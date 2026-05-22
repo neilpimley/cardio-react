@@ -1,47 +1,33 @@
 import React, { Component } from 'react';
-import ReactGA from 'react-ga4';
 import profileScrubs from '../images/profile-scrubs.jpg';
 
 export default class Profile extends Component {
     render() {
         return (
             <div>
-                <section className="bg-light">
+                <section className="hero-section">
                     <div className="container">
-                        <div className="row">
-
-                            <div className="col-xs-12 d-none d-xs-block">
-                                <h3 className="profile-name">Dr Peter McKavanagh</h3>
-                                <p>MB BCh BAO, MRCP(UK), MRCP(Ire), MMedSc, PhD</p>
-                            </div>
-
-                            <div className="col-xs-12 col-md-5">
-                                <img src={profileScrubs} className="img-fluid img-thumbnail float-left" alt="Dr. Peter McKavanagh" />
-                                <div style={{ marginTop: '20px' }}>
-                                    <button
-                                        className="btn btn-danger w-100"
-                                        onClick={() => {
-                                            document.querySelector('#booking')?.scrollIntoView({ behavior: 'smooth' });
-                                            ReactGA.event({ category: 'Navigation', action: 'Clicked Button', label: 'Book Appointment from Profile' });
-                                        }}
-                                    >
-                                        Book Appointment
-                                    </button>
+                        <div className="row align-items-center g-5">
+                            <div className="col-12 col-lg-5">
+                                <div className="profile-photo-wrap">
+                                    <img src={profileScrubs} className="profile-photo" alt="Dr. Peter McKavanagh" />
                                 </div>
                             </div>
-                            <div className="col-xs-12 col-md-7 d-xs-none">
+                            <div className="col-12 col-lg-7">
+                                <p className="eyebrow">Consultant Cardiologist in Belfast</p>
                                 <h1 className="profile-name">Dr Peter McKavanagh</h1>
-                                <h5>MB BCh BAO, MRCP(UK), MRCP(Ire), MMedSc, PhD</h5>
-                                <p>A dedicated consultant Cardiologist working at the Ulster and Royal Victoria Hospitals in Belfast, Northern Ireland. Areas
-                                    of expertise include:</p>
-                                <ul className="expert-list">
-                                    <li>General and acute cardiology</li>
-                                    <li>Coronary artery disease</li>
-                                    <li>Interventional cardiology (angioplasty/stenting)</li>
-                                    <li>Cardiac CT, heart failure, cholesterol & hypertension management</li>
-                                </ul>
-                                <p className="ml-2">
-                                    Our cardiology clinic offers top quality care in a comfortable environment, with very competitive prices.
+                                <p className="credentials">MB BCh BAO, MRCP(UK), MRCP(Ire), MMedSc, PhD</p>
+                                <p className="hero-lead">A dedicated consultant Cardiologist working at the Ulster and Royal Victoria Hospitals in Belfast, Northern Ireland.</p>
+                                <div className="expert-list">
+                                    <span>General and acute cardiology</span>
+                                    <span>Coronary artery disease</span>
+                                    <span>Interventional cardiology</span>
+                                    <span>Cardiac CT</span>
+                                    <span>Heart failure</span>
+                                    <span>Cholesterol and hypertension management</span>
+                                </div>
+                                <p>
+                                    Our cardiology clinic offers top quality care in a comfortable environment, with competitive prices.
                                     Our mission is to investigate and treat our patients quickly so that they can achieve long-term
                                     cardiovascular health.
                                 </p>
@@ -49,10 +35,10 @@ export default class Profile extends Component {
                         </div>
                     </div>
                 </section>
-                <section className="bg-light-blue">
+                <section className="profile-section">
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-12 mx-auto">
+                            <div className="col-lg-10 mx-auto content-panel">
                                 <h2>Professional Profile</h2>
                                 <p>All three of Dr McKavanagh’s degrees were from Queen's University Belfast. His primary medical degree with distinction was in 2003; his MSc in Clinical Education with distinction was in 2010; and his PhD in Cardiac CT was in 2016. He has a keen interest in research having published numerous papers and given international presentations. He was also runner-up in the European Society of Cardiology Young Investigator Award in 2013.</p>
 

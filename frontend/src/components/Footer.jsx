@@ -5,10 +5,11 @@ import MapComponent from './MapComponent';
 export default class Footer extends Component {
     render() {
         return (
-            <footer className="py-5 bg-light-blue">
+            <footer className="site-footer">
                 <div className="container">
-                    <div className="row">
+                    <div className="row g-4 align-items-stretch">
                         <div className="col-lg-6">
+                            <div className="footer-details">
                             <address>
                                 <strong>Dundonald Consulting Rooms</strong>
                                 <br /> 1 St Johns Wood Park
@@ -23,15 +24,18 @@ export default class Footer extends Component {
                                 <strong>Email: </strong>
                                 <a href="mailto:belfastcardiologist@gmail.com">belfastcardiologist@gmail.com</a>
                             </p>
+                            </div>
                         </div>
                         <div className="col-lg-6">
-                            <MapComponent
-                                isMarkerShown
-                                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_YJ_rcIISPfHxSj4HdujX1JzonnCwjA4&v=3.exp&libraries=geometry,drawing,places"
-                                loadingElement={<div style={{ height: `100%` }} />}
-                                containerElement={<div style={{ height: `400px` }} />}
-                                mapElement={<div style={{ height: `100%` }} />}
-                            />
+                            <div className="map-frame">
+                                <MapComponent
+                                    isMarkerShown
+                                    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_YJ_rcIISPfHxSj4HdujX1JzonnCwjA4&v=3.exp&libraries=geometry,drawing,places"
+                                    loadingElement={<div style={{ height: `100%` }} />}
+                                    containerElement={<div style={{ height: `360px` }} />}
+                                    mapElement={<div style={{ height: `100%` }} />}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>

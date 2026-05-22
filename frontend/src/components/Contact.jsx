@@ -98,66 +98,70 @@ export default class Contact extends Component {
 
     render() {
       return (
-    <section>
+    <section className="contact-section">
         <div className="container">
-            <div className="row">
-                <div className="col-lg-12 mx-auto">
+            <div className="row g-4 align-items-start">
+                <div className="col-lg-5">
                     <h2>Contact Information</h2>
-                    <p>To make an appointment with Dr McKavanagh please phone <a href="tel:+442890484840" onClick={this.handlePhoneClick}>028 9048 4840</a> or fill in the form below.</p>
+                    <p className="contact-intro">To make an appointment with Dr McKavanagh please phone <a href="tel:+442890484840" onClick={this.handlePhoneClick}>028 9048 4840</a> or fill in the form.</p>
+                    <div className="contact-callout">
+                        <strong>Appointments</strong>
+                        <span>Private cardiology consultations in Belfast.</span>
+                    </div>
+                </div>
+                <div className="col-lg-7">
                         {!this.state.patientMessageSent && 
-                        <form onSubmit={this.handleSubmit}>
-                        <div className="form-group row">
-                            <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Full name</label>
-                            <div className="col-sm-9">
+                        <form className="contact-form" onSubmit={this.handleSubmit}>
+                        <div className="form-group">
+                            <label htmlFor="patientName" className="form-label">Full name</label>
+                            <div>
                                 <input type="text" className="form-control" name="patientName"
                                     disabled={this.state.loading} required
                                     placeholder="Enter your name" onChange={this.handleInputChange}/>
                             </div>
                         </div>
-                        <div className="form-group row">
-                            <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Phone number</label>
-                            <div className="col-sm-9">
+                        <div className="form-group">
+                            <label htmlFor="patientPhone" className="form-label">Phone number</label>
+                            <div>
                                 <input type="tel" className="form-control" name="patientPhone" 
                                     disabled={this.state.loading} required
                                     placeholder="Enter your phone number" onChange={this.handleInputChange}/>
                             </div>
                         </div>
-                        <div className="form-group row">
-                            <label htmlFor="inputPassword" className="col-sm-3 col-form-label">Email address</label>
-                            <div className="col-sm-9">
+                        <div className="form-group">
+                            <label htmlFor="patientEmail" className="form-label">Email address</label>
+                            <div>
                                 <input type="email" className="form-control" name="patientEmail" 
                                     disabled={this.state.loading} required
                                     placeholder="Enter your email address" onChange={this.handleInputChange}/>
                             </div>
                         </div>
-                        <div className="form-group row">
-                            <div className="col-sm-12">
-                                <label htmlFor="exampleFormControlTextarea1">Message</label>
+                        <div className="form-group">
+                            <div>
+                                <label htmlFor="patientMessage" className="form-label">Message</label>
                                 <textarea className="form-control" name="patientMessage" rows="3" 
                                 disabled={this.state.loading} required
                                     onChange={this.handleInputChange}></textarea>
                             </div>
                         </div>
-                        <div className="form-group row">
-                            <div className="col-sm-12">
-                                <button type="submit" className="btn btn-lg float-right btn-light" 
+                        <div className="form-actions">
+                                <button type="submit" className="btn btn-primary btn-lg" 
                                 disabled={this.state.loading}>
                                 {this.state.loading && 
                                     <FontAwesome name='circle-o-notch' spin />
                                 }
                                 Send</button>
-                            </div>
                         </div>
                         {this.state.errorMessage && 
-                            <div class="alert alert-danger" role="alert">
+                            <div className="alert alert-danger" role="alert">
                                 {this.state.errorMessage}
                             </div>
                         }
                     </form>
                     }
                     {this.state.patientMessageSent && 
-                        <div class="alert alert-secondary" role="alert">
-                            Your message has been sent <button type="button" className="btn btn-primary float-right" onClick={this.resetMessage}>Send another message</button>
+                        <div className="alert alert-secondary" role="alert">
+                            Your message has been sent <button type="button" className="btn btn-primary float-end" onClick={this.resetMessage}>Send another message</button>
                         </div>
                     }
                     

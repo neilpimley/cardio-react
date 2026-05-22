@@ -42,10 +42,14 @@ export default class BookingWidget extends Component {
 
   render() {
     return (
-      <section id="booking" style={{ padding: '60px 20px', background: '#f9f9f9' }}>
+      <section id="booking" className="booking-section">
         <div className="container">
-          <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>Book an Appointment</h2>
-          <div id="simplybook-widget" style={{ width: '100%', minHeight: '550px' }} />
+          <div className="booking-header">
+            <h2>Book an Appointment</h2>
+          </div>
+          <div className="booking-panel">
+            <div id="simplybook-widget" className="booking-widget-frame" />
+          </div>
         </div>
       </section>
     );

@@ -26,15 +26,15 @@ export default class NavBar extends Component {
 
   render() {
     return (
-      <Navbar color="dark" fixed="top" className="navbar-dark navbar-expand-md">
-        <NavbarBrand href="/">
-          <img alt="logo" src={logo} style={{ height: 60 }} />
+      <Navbar fixed="top" className="site-navbar navbar-dark navbar-expand-md">
+        <NavbarBrand href="/" className="brand-mark">
+          <img alt="Belfast Cardiology Clinic" src={logo} />
         </NavbarBrand>
 
-        <NavbarToggler onClick={this.toggle} className="mr-2" />
+        <NavbarToggler onClick={this.toggle} className="navbar-toggle" />
 
         <Collapse isOpen={this.state.isOpen} navbar>
-          <Nav className="mx-auto" navbar>
+          <Nav className="ms-auto site-nav-links" navbar>
             <NavItem>
               <NavLink tag="span" className="nav-link">
                 <ScrollLink
@@ -73,6 +73,20 @@ export default class NavBar extends Component {
                   onClick={() => this.handleNavClick('Contact')}
                 >
                   Contact
+                </ScrollLink>
+              </NavLink>
+            </NavItem>
+
+            <NavItem>
+              <NavLink tag="span" className="nav-link nav-cta">
+                <ScrollLink
+                  to="booking"
+                  smooth
+                  duration={400}
+                  offset={-80}
+                  onClick={() => this.handleNavClick('Book Appointment')}
+                >
+                  Book Appointment
                 </ScrollLink>
               </NavLink>
             </NavItem>

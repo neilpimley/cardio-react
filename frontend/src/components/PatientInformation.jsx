@@ -21,33 +21,33 @@ export default class PatientInformation extends Component {
     }
     render() {
         return (
-            <section>
+            <section className="patient-section">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-12 mx-auto">
+                        <div className="col-lg-10 mx-auto">
                             <h2>Patient information </h2>
 
-                            <Nav tabs className="nav-fill">
+                            <Nav tabs className="nav-fill info-tabs">
                                 <NavItem>
                                     <NavLink className={classnames({ active: this.state.activeTab === '1' })}
                                         onClick={() => { this.toggle('1'); }}>
-                                        <h4>Symptoms</h4>
+                                        <span>Symptoms</span>
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink className={classnames({ active: this.state.activeTab === '2' })}
                                         onClick={() => { this.toggle('2'); }} >
-                                        <h4>Investigations</h4>
+                                        <span>Investigations</span>
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink className={classnames({ active: this.state.activeTab === '3' })}
                                         onClick={() => { this.toggle('3'); }} >
-                                        <h4>Pricing</h4>
+                                        <span>Pricing</span>
                                     </NavLink>
                                 </NavItem>
                             </Nav>
-                            <TabContent activeTab={this.state.activeTab}>
+                            <TabContent activeTab={this.state.activeTab} className="info-tab-content">
                                 <TabPane tabId="1">
                                     <p>Cardiovascular disease remains one of the most significant causes of death in Northern Ireland.
                                         In 2015, 27.4% of all deaths in the UK were caused by cardiovascular disease. Common cardiology
