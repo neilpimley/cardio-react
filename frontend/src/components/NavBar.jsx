@@ -31,6 +31,17 @@ export default class NavBar extends Component {
           <img alt="Belfast Cardiology Clinic" src={logo} />
         </NavbarBrand>
 
+        <ScrollLink
+          className="mobile-booking-cta"
+          to="booking"
+          smooth
+          duration={400}
+          offset={-80}
+          onClick={() => this.handleNavClick('Book Appointment')}
+        >
+          Book
+        </ScrollLink>
+
         <NavbarToggler onClick={this.toggle} className="navbar-toggle" />
 
         <Collapse isOpen={this.state.isOpen} navbar>

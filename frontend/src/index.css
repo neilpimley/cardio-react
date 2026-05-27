@@ -107,6 +107,28 @@ section {
   border-radius: 8px;
 }
 
+.mobile-booking-cta {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 0.9rem;
+  border-radius: 999px;
+  color: var(--navy);
+  background: #9ee8de;
+  font-size: 0.92rem;
+  font-weight: 900;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.mobile-booking-cta:hover,
+.mobile-booking-cta:focus {
+  color: var(--navy);
+  background: #c6fff7;
+  text-decoration: none;
+}
+
 .site-nav-links {
   align-items: center;
   gap: 0.25rem;
@@ -521,6 +543,16 @@ textarea.form-control {
 
   .site-navbar {
     min-height: 70px;
+    gap: 0.65rem;
+  }
+
+  .mobile-booking-cta {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .site-nav-links .nav-cta {
+    display: none;
   }
 
   .hero-section {
