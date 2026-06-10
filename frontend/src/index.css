@@ -343,8 +343,7 @@ h1.profile-name {
 }
 
 .contact-section h2,
-.contact-section p,
-.contact-section label {
+.contact-section p {
   color: var(--white);
 }
 
@@ -359,68 +358,6 @@ h1.profile-name {
 
 .contact-section a {
   color: #9ee8de;
-}
-
-.contact-callout {
-  display: grid;
-  gap: 0.35rem;
-  max-width: 430px;
-  margin-top: 2rem;
-  padding: 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.09);
-}
-
-.contact-callout strong {
-  color: var(--white);
-  font-size: 1.1rem;
-}
-
-.contact-callout span {
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.contact-form {
-  padding: clamp(1.25rem, 3vw, 2rem);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
-}
-
-.contact-form .form-group {
-  margin-bottom: 1.15rem;
-}
-
-.contact-form label {
-  color: var(--navy);
-  font-size: 0.9rem;
-  font-weight: 900;
-}
-
-.form-control {
-  min-height: 52px;
-  border: 1px solid #cbd5df;
-  border-radius: 8px;
-  color: var(--ink);
-  font-size: 1rem;
-}
-
-textarea.form-control {
-  min-height: 132px;
-  resize: vertical;
-}
-
-.form-control:focus {
-  border-color: var(--teal);
-  box-shadow: 0 0 0 0.24rem rgba(15, 139, 141, 0.18);
-}
-
-.form-actions {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 1.5rem;
 }
 
 .btn-primary {
@@ -589,13 +526,5 @@ textarea.form-control {
 
   .info-tab-content ul {
     grid-template-columns: 1fr;
-  }
-
-  .form-actions {
-    justify-content: stretch;
-  }
-
-  .form-actions .btn {
-    width: 100%;
   }
 }

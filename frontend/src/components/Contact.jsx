@@ -1,95 +1,6 @@
 import React, { Component } from 'react';
-import FontAwesome from 'react-fontawesome';
-import 'whatwg-fetch';
 
 export default class Contact extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            patientName: '',
-            patientPhone: '',
-            patientEmail: '',
-            patientMessage: '',
-            loading: false,
-            patientMessageSent: false,
-            errorMessage: ''
-        };
-
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.resetMessage = this.resetMessage.bind(this);
-    }
-
-    resetMessage() {
-        this.setState({
-            patientName: '',
-            patientPhone: '',
-            patientEmail: '',
-            patientMessage: '',
-            loading: false,
-            patientMessageSent: false,
-            errorMessage: ''
-        });
-    }
-
-    handleInputChange(event) {
-        const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-        const name = target.name;
-        
-        this.setState({
-          [name]: value
-        });
-      }
-
-    handleSubmit(event) {
-        event.preventDefault();
-        var _this = this;
-        this.setState({ 
-            loading: true, 
-            patientMessageSent: false, 
-            errorMessage: '' 
-        });
-
-
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-
-        fetch('/patientContact', {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            method: 'POST',
-	        body: JSON.stringify(this.state)
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            if (data.success) {
-                this.setState({
-                    loading: false,
-                    patientMessageSent: true,
-                    errorMessage: null
-                });
-            } else {
-                this.setState({
-                    loading: false,
-                    patientMessageSent: false,
-                    errorMessage: data.error || 'An unexpected error occurred.'
-                });
-            }
-        })
-        .catch(function(error) {
-            console.log('Error:', error);
-            _this.setState({
-                loading: false, 
-                patientMessageSent: false,
-                errorMessage: error.message || 'Network error. Please try again.'
-            });
-        });
-    }
-
     handlePhoneClick = () => {
         window.gtag('event', 'conversion', {
           send_to: 'AW-769199339/tlWNCPyPpvMZEOuZ5O4C',
@@ -101,71 +12,9 @@ export default class Contact extends Component {
     <section className="contact-section">
         <div className="container">
             <div className="row g-4 align-items-start">
-                <div className="col-lg-5">
-                    <h2>Contact Information</h2>
-                    <p className="contact-intro">To make an appointment with Dr McKavanagh please phone <a href="tel:+442890484840" onClick={this.handlePhoneClick}>028 9048 4840</a> or fill in the form.</p>
-                    <div className="contact-callout">
-                        <strong>Appointments</strong>
-                        <span>Private cardiology consultations in Belfast.</span>
-                    </div>
-                </div>
                 <div className="col-lg-7">
-                        {!this.state.patientMessageSent && 
-                        <form className="contact-form" onSubmit={this.handleSubmit}>
-                        <div className="form-group">
-                            <label htmlFor="patientName" className="form-label">Full name</label>
-                            <div>
-                                <input type="text" className="form-control" name="patientName"
-                                    disabled={this.state.loading} required
-                                    placeholder="Enter your name" onChange={this.handleInputChange}/>
-                            </div>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="patientPhone" className="form-label">Phone number</label>
-                            <div>
-                                <input type="tel" className="form-control" name="patientPhone" 
-                                    disabled={this.state.loading} required
-                                    placeholder="Enter your phone number" onChange={this.handleInputChange}/>
-                            </div>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="patientEmail" className="form-label">Email address</label>
-                            <div>
-                                <input type="email" className="form-control" name="patientEmail" 
-                                    disabled={this.state.loading} required
-                                    placeholder="Enter your email address" onChange={this.handleInputChange}/>
-                            </div>
-                        </div>
-                        <div className="form-group">
-                            <div>
-                                <label htmlFor="patientMessage" className="form-label">Message</label>
-                                <textarea className="form-control" name="patientMessage" rows="3" 
-                                disabled={this.state.loading} required
-                                    onChange={this.handleInputChange}></textarea>
-                            </div>
-                        </div>
-                        <div className="form-actions">
-                                <button type="submit" className="btn btn-primary btn-lg" 
-                                disabled={this.state.loading}>
-                                {this.state.loading && 
-                                    <FontAwesome name='circle-o-notch' spin />
-                                }
-                                Send</button>
-                        </div>
-                        {this.state.errorMessage && 
-                            <div className="alert alert-danger" role="alert">
-                                {this.state.errorMessage}
-                            </div>
-                        }
-                    </form>
-                    }
-                    {this.state.patientMessageSent && 
-                        <div className="alert alert-secondary" role="alert">
-                            Your message has been sent <button type="button" className="btn btn-primary float-end" onClick={this.resetMessage}>Send another message</button>
-                        </div>
-                    }
-                    
-
+                    <h2>Contact Information</h2>
+                    <p className="contact-intro">To make an appointment with Dr McKavanagh please phone <a href="tel:+442890484840" onClick={this.handlePhoneClick}>028 9048 4840</a> or use the appointment booking service below.</p>
                 </div>
             </div>
         </div>
