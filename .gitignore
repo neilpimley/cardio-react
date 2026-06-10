@@ -1,6 +1,9 @@
 # Node build artifacts
 node_modules
 npm-debug.log
+*.log
+*.err.log
+*.out.log
 
 # Local development
 *.env
@@ -12,4 +15,4 @@ Dockerfile
 docker-compose.yml
 
 # Build output
-frontend/dist
+dist

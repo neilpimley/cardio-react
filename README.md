@@ -1,44 +1,39 @@
 # Scrolling SPA for personal profile website
 
-Professional profile single page scrolling website for Dr. Peter McKavanagh built in React and NodeJS
+Professional profile single page scrolling website for Dr. Peter McKavanagh built with React and Vite.
 
 ## Built With
 
 * [React](https://reactjs.org/) - The web framework used
-* [NodeJs](https://nodejs.org/en/) - Server side for simple api
+* [Vite](https://vite.dev/) - Frontend build tooling
 * [Bootstrap](http://getbootstrap.com/) - Boostrap for layouts and components
 * [reactstrap](https://reactstrap.github.io/) - UI components
 * [FontAwesome](http://fontawesome.io/) - icons
-* [Nodemailer](https://nodemailer.com/) - Sending emails from NodeJS
 
-* [Heroku](https://signup.heroku.com/) - Hosted on free plan
+* [Netlify](https://www.netlify.com/) - Static site hosting
 
 
 ## Usage
 Feel free to chop and change and use it for a simple single page website
 
-To clone the repo and 
+To clone the repo and run locally:
 ```
 $ git clone https://github.com/neilpimley/cardio-react.git
 $ npm install
-$ cd frontend/
-$ npm install
+$ npm run dev
 ```
 
-Requies an .env file to be added to the root with the following variables
+To create a production build:
 
 ```
-EMAIL_USER= 
-EMAIL_PASS=
-SMTP_HOST=
-SMTP_PORT=
-SMTP_SECURE=
-PERSONAL_ADDRESS=
+$ npm run build
 ```
-install the Heroku Cli (https://devcenter.heroku.com/articles/heroku-cli) and run 
+
+Netlify uses the settings in `netlify.toml`:
 
 ```
-heroku local
+Build command: npm run build
+Publish directory: dist
 ```
 
 ## License

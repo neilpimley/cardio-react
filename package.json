@@ -1,36 +1,26 @@
 {
-  "name": "cardio-react",
+  "name": "cardio-react-ui",
   "version": "1.0.0",
-  "description": "Website of Dr. Peter McKavanagh, Cardiologist based in Belfast",
-  "engines": {
-    "node": ">=18 <23"
+  "private": true,
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^6.4.2"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "classnames": "^2.5.1",
+    "font-awesome": "^4.7.0",
+    "google-map-react": "^2.2.5",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-ga4": "^3.0.1",
+    "react-scroll": "^1.9.3",
+    "reactstrap": "^9.2.3"
   },
   "scripts": {
-    "start": "node server",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm --prefix frontend ci && npm --prefix frontend run build"
-  },
-  "cacheDirectories": [
-    "node_modules",
-    "frontend/node_modules"
-  ],
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "dotenv": "^17.2.3",
-    "express": "^4.14.1",
-    "express-sslify": "^1.2.0",
-    "mailersend": "^2.6.0",
-    "nodemailer": "^4.0.1",
-    "path": "^0.12.7"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/neilpimley/cardio-react.git"
-  },
-  "keywords": [
-    "node",
-    "heroku",
-    "create-react-app",
-    "react"
-  ],
-  "license": "MIT"
+    "dev": "vite",
+    "build": "vite build",
+    "build:watch": "vite build --watch",
+    "preview": "vite preview"
+  }
 }
