@@ -23,7 +23,7 @@ export default function MapComponent({ isMarkerShown = true, height = 400, width
   return (
     <div style={{ height, width }}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyA_YJ_rcIISPfHxSj4HdujX1JzonnCwjA4" }} // or a hardcoded key (not recommended)
+        bootstrapURLKeys={{ key: "AIzaSyBMPuBoyQgFnwdpvjpTqxkMolVMoywTae0" }} // or a hardcoded key (not recommended)
         defaultCenter={defaultCenter}
         defaultZoom={12}
       >

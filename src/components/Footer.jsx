@@ -30,7 +30,7 @@ export default class Footer extends Component {
                             <div className="map-frame">
                                 <MapComponent
                                     isMarkerShown
-                                    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_YJ_rcIISPfHxSj4HdujX1JzonnCwjA4&v=3.exp&libraries=geometry,drawing,places"
+                                    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMPuBoyQgFnwdpvjpTqxkMolVMoywTae0&v=3.exp&libraries=geometry,drawing,places"
                                     loadingElement={<div style={{ height: `100%` }} />}
                                     containerElement={<div style={{ height: `360px` }} />}
                                     mapElement={<div style={{ height: `100%` }} />}
