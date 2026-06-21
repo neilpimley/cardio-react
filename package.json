@@ -14,9 +14,9 @@
     "frontend/node_modules"
   ],
   "dependencies": {
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.20.5",
     "dotenv": "^17.2.3",
-    "express": "^4.14.1",
+    "express": "^4.22.2",
     "express-sslify": "^1.2.0",
     "mailersend": "^2.6.0",
     "nodemailer": "^4.0.1",
